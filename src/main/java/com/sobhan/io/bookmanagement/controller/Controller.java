@@ -1,0 +1,41 @@
+package com.sobhan.io.bookmanagement.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sobhan.io.bookmanagement.entities.Books;
+import com.sobhan.io.bookmanagement.services.BooksService;
+
+@RestController
+
+public class Controller {
+	@Autowired
+	private BooksService booksserv;
+
+	// GET list of all books
+	@GetMapping("/books")
+	public List<Books> getBooks() {
+
+		return this.booksserv.getBooks();
+	}
+	
+	//GET single book as per id
+	@GetMapping("/books/{bookId}")
+	public Books getBook(@PathVariable String bookId) {
+
+		return this.booksserv.getBooks(Long.parseLong(bookId));
+	}
+	
+	//ADD book to list
+	@PostMapping("/books")
+	public Books addBook(@RequestBody Books books) {
+		
+		return this.booksserv.addBooks(books);
+	}
+}
