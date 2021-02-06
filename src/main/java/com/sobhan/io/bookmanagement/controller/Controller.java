@@ -49,7 +49,7 @@ public class Controller {
 		return this.booksserv.updateBooks(books);
 	}
 
-	// delete books
+	// delete books in entry
 	@DeleteMapping("/books/{bookId")
 	public ResponseEntity<HttpsStatus> deleteBooks(@PathVariable String BookId){
 		try {
