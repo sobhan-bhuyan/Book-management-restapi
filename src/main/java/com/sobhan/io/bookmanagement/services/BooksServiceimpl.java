@@ -2,6 +2,7 @@ package com.sobhan.io.bookmanagement.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -46,6 +47,25 @@ public class BooksServiceimpl implements BooksService {
 	public Books addBooks(Books books) {
 		list.add(books);
 		return books;
+	}
+	
+	@Override
+	public Books updateBooks(Books book) {
+		
+		list.forEach(e->{
+			if (e.getId()== book.getId()) {
+				e.setTitle(book.getTitle());
+				e.setDescription((book.getDescription());
+				
+			}
+		});
+				return book;
+				
+	}
+	
+	@Override
+	public void deleteBooks(long parselong) {
+		list = this.list.stream().filter(e->e.getId()!=parselong).collect(Collectors.toList());
 	}
 
 }
