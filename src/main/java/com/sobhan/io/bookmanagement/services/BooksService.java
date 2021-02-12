@@ -12,7 +12,7 @@ public interface BooksService {
 	
 	public Books addBooks(Books books);
 	
-	public Books updateBooks(Books book);
+	public Books updateBooks(Books books);
 	
 	public void deleteBooks(long parselong);
 }

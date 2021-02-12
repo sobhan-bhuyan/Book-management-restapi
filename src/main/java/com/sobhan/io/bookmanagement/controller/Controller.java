@@ -50,8 +50,8 @@ public class Controller {
 	}
 
 	// delete books in entry
-	@DeleteMapping("/books/{bookId")
-	public ResponseEntity<HttpsStatus> deleteBooks(@PathVariable String BookId){
+	@DeleteMapping("/books/{bookId}")
+	public ResponseEntity<HttpStatus> deleteBooks(@PathVariable String bookId){
 		try {
 			this.booksserv.deleteBooks(Long.parseLong(bookId));
 			return new ResponseEntity<>(HttpStatus.OK);
