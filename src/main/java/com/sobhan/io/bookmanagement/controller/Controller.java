@@ -33,27 +33,27 @@ public class Controller {
 	@GetMapping("/books/{bookId}")
 	public Books getBook(@PathVariable String bookId) {
 
-		return this.booksserv.getBooks(Long.parseLong(bookId));
+		return this.booksserv.getBook(Long.parseLong(bookId));
 	}
 
-	// ADD book
+	// ADD  SINGLE book
 	@PostMapping("/books")
 	public Books addBook(@RequestBody Books books) {
 
-		return this.booksserv.addBooks(books);
+		return this.booksserv.addBook(books);
 	}
 
 	// update books using put
 	@PutMapping("/books")
 	public Books updateBook(@RequestBody Books books) {
-		return this.booksserv.updateBooks(books);
+		return this.booksserv.updateBook(books);
 	}
 
 	// delete books in entry
 	@DeleteMapping("/books/{bookId}")
 	public ResponseEntity<HttpStatus> deleteBooks(@PathVariable String bookId){
 		try {
-			this.booksserv.deleteBooks(Long.parseLong(bookId));
+			this.booksserv.deleteBook(Long.parseLong(bookId));
 			return new ResponseEntity<>(HttpStatus.OK);
 		}catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -8,11 +8,11 @@ public interface BooksService {
 
 	public List<Books> getBooks();
 	
-	public Books getBooks(long bookId);
+	public Books getBook(long bookId);
 	
-	public Books addBooks(Books books);
+	public Books addBook(Books books);
 	
-	public Books updateBooks(Books books);
-	
-	public void deleteBooks(long parselong);
+	public Books updateBook(Books books);
+
+	public void deleteBook(long parselong);
 }

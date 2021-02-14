@@ -1,6 +1,12 @@
 package com.sobhan.io.bookmanagement.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Books {
+	
+	@Id
 private long id;
 private String title;
 private String description;
@@ -12,7 +18,7 @@ public Books(long id, String title, String description) {
 }
 public Books() {
 	super();
-	// TODO Auto-generated constructor stub
+	
 }
 public long getId() {
 	return id;
