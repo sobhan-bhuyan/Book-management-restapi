@@ -36,11 +36,10 @@ public class Controller {
 		return this.booksserv.getBook(Long.parseLong(bookId));
 	}
 
-	// ADD  SINGLE book
+	// ADD  one or more books
 	@PostMapping("/books")
-	public Books addBook(@RequestBody Books books) {
-
-		return this.booksserv.addBook(books);
+	public List<Books> addBooks(@RequestBody List<Books> books) {
+			return this.booksserv.addBooks(books);
 	}
 
 	// update books using put

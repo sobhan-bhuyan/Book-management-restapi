@@ -10,7 +10,7 @@ public interface BooksService {
 	
 	public Books getBook(long bookId);
 	
-	public Books addBook(Books books);
+	public List<Books> addBooks(List<Books> books);
 	
 	public Books updateBook(Books books);
 
